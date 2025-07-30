@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Seif Allah Bel Hadj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f5; /* bg-gray-100 */
+        }
+        .container {
+            max-width: 8.5in; /* Standard US Letter width */
+        }
+        .section-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            text-transform: uppercase;
+            letter-spacing: 0.05em; /* tracking-wider */
+            padding-bottom: 0.5rem; /* pb-2 */
+            border-bottom: 2px solid #e5e7eb; /* border-gray-200 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto my-10 p-12 bg-white shadow-xl rounded-lg">
+
+        <!-- En-tête -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-bold text-gray-900 uppercase">Seif Allah Bel Hadj</h1>
+            <h2 class="text-2xl font-medium text-gray-700 mt-2">Agent Service Après-Vente E-commerce</h2>
+        </header>
+
+        <!-- Informations de contact -->
+        <div class="flex justify-center items-center space-x-6 text-gray-600 mb-10 border-y border-gray-200 py-4">
+            <div class="flex items-center">
+                <i class="fas fa-phone fa-fw mr-2"></i>
+                <span>+216 58843433</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-envelope fa-fw mr-2"></i>
+                <span>seifallah.bhj@gmail.com</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-map-marker-alt fa-fw mr-2"></i>
+                <span>Tunis</span>
+            </div>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Colonne de gauche -->
+            <div class="md:col-span-2">
+                <!-- Résumé -->
+                <section class="mb-8">
+                    <h3 class="section-title">Résumé</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Professionnel du support technique avec plus de 8 ans d'expérience dans l'assistance client et la résolution de pannes informatiques complexes. Récemment diplômé d'un bootcamp en développement web, j'ai développé un projet de site e-commerce fonctionnel et je souhaite aujourd'hui mettre à profit cette double compétence technique et relationnelle pour garantir une expérience client exceptionnelle chez GOMYCODE.
+                    </p>
+                </section>
+
+                <!-- Expériences -->
+                <section>
+                    <h3 class="section-title">Expériences Professionnelles</h3>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold">Technicien Support Helpdesk <span class="text-base font-normal text-gray-600">| Freelance</span></h4>
+                        <p class="text-sm text-gray-500 mb-2">2023 - Aujourd'hui</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Diagnostiqué et résolu des pannes logicielles et matérielles.</li>
+                            <li>Fourni une assistance technique à distance, améliorant la satisfaction client.</li>
+                            <li>Géré l'installation et la configuration de systèmes et logiciels de sécurité.</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold">Technicien Support <span class="text-base font-normal text-gray-600">| Société Eurekall</span></h4>
+                        <p class="text-sm text-gray-500 mb-2">2018 - 2022</p>
+                         <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Fourni une assistance informatique à distance via TeamViewer, Anydesk, etc.</li>
+                            <li>Géré et résolu des incidents systèmes et matériels complexes.</li>
+                            <li>Déployé et configuré des postes de travail Windows et macOS.</li>
+                        </ul>
+                    </div>
+                     <div class="mb-6">
+                        <h4 class="text-lg font-bold">Technicien en Maintenance <span class="text-base font-normal text-gray-600">| Société Emacer</span></h4>
+                        <p class="text-sm text-gray-500 mb-2">2016 - 2018</p>
+                         <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Assuré la maintenance préventive et curative de postes bureautiques et d'imprimantes.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold">Téléopérateur <span class="text-base font-normal text-gray-600">| Advancia</span></h4>
+                        <p class="text-sm text-gray-500 mb-2">2015 - 2016</p>
+                         <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Réalisé la qualification de fichiers et la prise de rendez-vous.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Colonne de droite -->
+            <div>
+                <!-- Compétences -->
+                <section class="mb-8">
+                    <h3 class="section-title">Compétences</h3>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Développement Web:</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed">HTML, CSS, JavaScript, React.js, Node.js, MongoDB, SQL, Git, Scrum</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Support & Systèmes:</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed">Windows & macOS, Support à distance, Maintenance Matérielle, Office 365</p>
+                    </div>
+                     <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Compétences comportementales:</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed">Résolution de problèmes, Communication, Adaptabilité, Esprit d'équipe</p>
+                    </div>
+                </section>
+                
+                <!-- Formation -->
+                <section class="mb-8">
+                    <h3 class="section-title">Formation</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold">Software Developer Bootcamp</h4>
+                        <p class="text-sm text-gray-600">GOMYCODE (2025)</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold">BTS Maintenance Informatique</h4>
+                        <p class="text-sm text-gray-600">EFC, Tunis (2012)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Baccalauréat en Littérature</h4>
+                        <p class="text-sm text-gray-600">Carthage Hannibal (2009)</p>
+                    </div>
+                </section>
+
+                <!-- Langues -->
+                <section>
+                    <h3 class="section-title">Langues</h3>
+                    <p class="text-gray-700">Français (Avancé)</p>
+                    <p class="text-gray-700">Anglais (Débutant)</p>
+                </section>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
