@@ -4,148 +4,491 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Seif Allah Bel Hadj</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* ---- THEME NOIR & BLANC MODERNE ---- */
+        :root {
+            --font-primary: 'Lato', sans-serif;
+            --font-secondary: 'Roboto Slab', serif;
+            --color-text: #444;
+            --color-heading: #000;
+            --color-background: #fff;
+            --color-border: #e0e0e0;
+            --color-sidebar-text: #555;
+            --color-accent: #007bff;
+        }
+
+        /* ---- GENERAL ---- */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f4f5; /* bg-gray-100 */
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            background-color: #f4f4f4;
+            color: var(--color-text);
+            margin: 0;
+            padding: 0;
         }
+
         .container {
-            max-width: 8.5in; /* Standard US Letter width */
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: var(--color-background);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
         }
-        .section-title {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 700; /* font-bold */
+
+        /* ---- HEADER ---- */
+        header {
+            padding: 40px 50px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: var(--font-secondary);
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--color-heading);
+        }
+
+        /* ---- LAYOUT ---- */
+        .main-content {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 33%;
+            padding: 40px;
+            box-sizing: border-box;
+            border-right: 1px solid var(--color-border);
+            color: var(--color-sidebar-text);
+        }
+
+        .main-details {
+            width: 67%;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* ---- SECTIONS ---- */
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--color-heading);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.05em; /* tracking-wider */
-            padding-bottom: 0.5rem; /* pb-2 */
-            border-bottom: 2px solid #e5e7eb; /* border-gray-200 */
-            margin-bottom: 1.5rem; /* mb-6 */
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--color-heading);
+        }
+
+        /* ---- DETAILS SPECIFIQUES ---- */
+        .contact p {
+            margin: 0 0 15px;
+        }
+        .contact strong {
+            color: #222;
+        }
+
+        .contact a {
+            color: var(--color-sidebar-text);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        .contact a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .main-details ul li::before {
+            content: '■';
+            position: absolute;
+            left: -20px;
+            font-size: 0.6em;
+            color: var(--color-heading);
+        }
+        
+        .sidebar ul {
+            padding-left: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 8px;
+        }
+
+
+        .experience .job, .education .course {
+            margin-bottom: 25px;
+        }
+
+        .experience h4, .education h4 {
+            font-size: 1.1em;
+            color: var(--color-heading);
+            font-weight: 700;
+            margin: 0 0 2px;
+        }
+        
+        .experience h4 strong, .education h4 strong {
+            font-weight: 400;
+            color: #555;
+        }
+
+        .sidebar .skills h4 {
+            color: var(--color-heading);
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-style: italic;
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        /* ---- GEMINI FEATURE STYLES ---- */
+        #gemini-feature {
+            background-color: #f9f9f9;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        #gemini-feature h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            border-bottom-color: #ccc;
+        }
+        
+        #gemini-feature p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        #job-description {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-family: var(--font-primary);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        #tailor-cv-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #222;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-secondary);
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #tailor-cv-btn:hover {
+            background-color: #555;
+        }
+        
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none; /* Hidden by default */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #tailored-summary-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f5ff;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+            color: #333;
+            font-style: italic;
+            display: none; /* Hidden by default */
+        }
+
+
+        /* ---- RESPONSIVE DESIGN ---- */
+        @media (max-width: 850px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .sidebar, .main-details {
+                width: 100%;
+                border-right: none;
+            }
+            .sidebar {
+                 border-bottom: 1px solid var(--color-border);
+            }
+            .container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+             header {
+                padding: 30px 25px;
+                text-align: center;
+            }
+            .sidebar, .main-details {
+                padding: 30px 25px;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto my-10 p-12 bg-white shadow-xl rounded-lg">
-
-        <!-- En-tête -->
-        <header class="text-center mb-10">
-            <h1 class="text-5xl font-bold text-gray-900 uppercase">Seif Allah Bel Hadj</h1>
-            <h2 class="text-2xl font-medium text-gray-700 mt-2">Agent Service Après-Vente E-commerce</h2>
+<body>
+    <div class="container" id="cv-container">
+        <header>
+            <h1>SEIF ALLAH BEL HADJ</h1>
         </header>
 
-        <!-- Informations de contact -->
-        <div class="flex justify-center items-center space-x-6 text-gray-600 mb-10 border-y border-gray-200 py-4">
-            <div class="flex items-center">
-                <i class="fas fa-phone fa-fw mr-2"></i>
-                <span>+216 58843433</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-envelope fa-fw mr-2"></i>
-                <span>seifallah.bhj@gmail.com</span>
-            </div>
-            <div class="flex items-center">
-                <i class="fas fa-map-marker-alt fa-fw mr-2"></i>
-                <span>Tunis</span>
-            </div>
-        </div>
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="contact">
+                    <h3>Contact</h3>
+                    <p><strong>Téléphone :</strong><br>+216 58 843 433</p>
+                    <p><strong>Email :</strong><br><a href="mailto:seifallah.bhj@gmail.com">seifallah.bhj@gmail.com</a></p>
+                    <p><strong>Lieu :</strong><br>Tunis</p>
+                </section>
 
-        <!-- Contenu principal -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Colonne de gauche -->
-            <div class="md:col-span-2">
-                <!-- Résumé -->
-                <section class="mb-8">
-                    <h3 class="section-title">Résumé</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Professionnel du support technique avec plus de 8 ans d'expérience dans l'assistance client et la résolution de pannes informatiques complexes. Récemment diplômé d'un bootcamp en développement web, j'ai développé un projet de site e-commerce fonctionnel et je souhaite aujourd'hui mettre à profit cette double compétence technique et relationnelle pour garantir une expérience client exceptionnelle chez GOMYCODE.
+                <section class="skills">
+                    <h3>Compétences</h3>
+                    <h4>Support & Systèmes</h4>
+                    <ul>
+                        <li>Windows & macOS</li>
+                        <li>Support à distance (TeamViewer, Anydesk)</li>
+                        <li>Maintenance Matérielle</li>
+                        <li>Office 365 & Gestion d'incidents</li>
+                    </ul>
+                    <h4>Développement Web</h4>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React.js, Node.js</li>
+                        <li>MongoDB, SQL</li>
+                        <li>Git, Scrum</li>
+                    </ul>
+                    <h4>Compétences Comportementales</h4>
+                     <ul>
+                        <li>Résolution de problèmes</li>
+                        <li>Communication & Pédagogie</li>
+                        <li>Adaptabilité & Esprit d'équipe</li>
+                    </ul>
+                </section>
+
+                <section class="languages">
+                    <h3>Langues</h3>
+                    <p><strong>Français :</strong> Avancé</p>
+                    <p><strong>Anglais :</strong> Débutant</p>
+                </section>
+            </aside>
+
+            <main class="main-details">
+                <section class="summary">
+                    <h3>Résumé</h3>
+                    <p id="original-summary">
+                        Professionnel du support informatique avec plus de 8 ans d'expérience, spécialisé dans le diagnostic à distance et la résolution d'incidents techniques. Suite à une reconversion récente en développement web, je souhaite mettre à profit ma double compétence en support utilisateur et en technique pour un poste de Service Desk Analyst. Mon objectif est d'assurer un support de qualité, de guider efficacement les utilisateurs et de contribuer à l'excellence opérationnelle de l'équipe technique.
                     </p>
                 </section>
-
-                <!-- Expériences -->
-                <section>
-                    <h3 class="section-title">Expériences Professionnelles</h3>
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold">Technicien Support Helpdesk <span class="text-base font-normal text-gray-600">| Freelance</span></h4>
-                        <p class="text-sm text-gray-500 mb-2">2023 - Aujourd'hui</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Diagnostiqué et résolu des pannes logicielles et matérielles.</li>
-                            <li>Fourni une assistance technique à distance, améliorant la satisfaction client.</li>
-                            <li>Géré l'installation et la configuration de systèmes et logiciels de sécurité.</li>
-                        </ul>
-                    </div>
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold">Technicien Support <span class="text-base font-normal text-gray-600">| Société Eurekall</span></h4>
-                        <p class="text-sm text-gray-500 mb-2">2018 - 2022</p>
-                         <ul class="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Fourni une assistance informatique à distance via TeamViewer, Anydesk, etc.</li>
-                            <li>Géré et résolu des incidents systèmes et matériels complexes.</li>
-                            <li>Déployé et configuré des postes de travail Windows et macOS.</li>
-                        </ul>
-                    </div>
-                     <div class="mb-6">
-                        <h4 class="text-lg font-bold">Technicien en Maintenance <span class="text-base font-normal text-gray-600">| Société Emacer</span></h4>
-                        <p class="text-sm text-gray-500 mb-2">2016 - 2018</p>
-                         <ul class="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Assuré la maintenance préventive et curative de postes bureautiques et d'imprimantes.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold">Téléopérateur <span class="text-base font-normal text-gray-600">| Advancia</span></h4>
-                        <p class="text-sm text-gray-500 mb-2">2015 - 2016</p>
-                         <ul class="list-disc list-inside text-gray-700 space-y-1">
-                            <li>Réalisé la qualification de fichiers et la prise de rendez-vous.</li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Colonne de droite -->
-            <div>
-                <!-- Compétences -->
-                <section class="mb-8">
-                    <h3 class="section-title">Compétences</h3>
-                    <div class="mb-4">
-                        <h4 class="font-semibold text-gray-800 mb-2">Développement Web:</h4>
-                        <p class="text-gray-700 text-sm leading-relaxed">HTML, CSS, JavaScript, React.js, Node.js, MongoDB, SQL, Git, Scrum</p>
-                    </div>
-                    <div class="mb-4">
-                        <h4 class="font-semibold text-gray-800 mb-2">Support & Systèmes:</h4>
-                        <p class="text-gray-700 text-sm leading-relaxed">Windows & macOS, Support à distance, Maintenance Matérielle, Office 365</p>
-                    </div>
-                     <div>
-                        <h4 class="font-semibold text-gray-800 mb-2">Compétences comportementales:</h4>
-                        <p class="text-gray-700 text-sm leading-relaxed">Résolution de problèmes, Communication, Adaptabilité, Esprit d'équipe</p>
-                    </div>
-                </section>
                 
-                <!-- Formation -->
-                <section class="mb-8">
-                    <h3 class="section-title">Formation</h3>
-                    <div class="mb-4">
-                        <h4 class="font-bold">Software Developer Bootcamp</h4>
-                        <p class="text-sm text-gray-600">GOMYCODE (2025)</p>
+                <!-- GEMINI API FEATURE -->
+                <section id="gemini-feature">
+                    <h3>Évaluez la Pertinence pour Votre Poste</h3>
+                    <p>Gagnez du temps. Collez votre description de poste ici pour générer un résumé mettant en avant les compétences clés pour ce rôle.</p>
+                    <textarea id="job-description" placeholder="Collez la description du poste ici..."></textarea>
+                    <button id="tailor-cv-btn">Générer le résumé personnalisé</button>
+                    <div class="loader" id="loader"></div>
+                    <div id="tailored-summary-result"></div>
+                </section>
+                <!-- END GEMINI API FEATURE -->
+
+                <section class="experience">
+                    <h3>Expériences Professionnelles</h3>
+                    <div class="job">
+                        <h4>Technicien Support Helpdesk | <strong>Freelance</strong></h4>
+                        <p class="date">2023 - Aujourd'hui</p>
+                        <ul>
+                            <li>Diagnostic et résolution à distance des dysfonctionnements matériels et logiciels.</li>
+                            <li>Assistance et guidage des utilisateurs dans la résolution d'incidents, avec prise en main à distance si nécessaire.</li>
+                            <li>Gestion de l'installation et de la configuration des postes de travail et des logiciels de sécurité.</li>
+                            <li>Documentation des interventions dans l'outil de gestion des incidents.</li>
+                        </ul>
                     </div>
-                    <div class="mb-4">
-                        <h4 class="font-bold">BTS Maintenance Informatique</h4>
-                        <p class="text-sm text-gray-600">EFC, Tunis (2012)</p>
+                    <div class="job">
+                        <h4>Technicien Support | <strong>Société Eurekall</strong></h4>
+                        <p class="date">2018 - 2022</p>
+                        <ul>
+                            <li>Fourniture d'une assistance informatique à distance via des outils tels que TeamViewer et Anydesk.</li>
+                            <li>Gestion et résolution d'incidents systèmes et matériels complexes, avec escalade aux équipes compétentes.</li>
+                            <li>Déploiement et configuration de postes de travail en environnements Windows et macOS.</li>
+                        </ul>
                     </div>
-                    <div>
-                        <h4 class="font-bold">Baccalauréat en Littérature</h4>
-                        <p class="text-sm text-gray-600">Carthage Hannibal (2009)</p>
+                     <div class="job">
+                        <h4>Technicien en Maintenance | <strong>Société Emacer</strong></h4>
+                        <p class="date">2016 - 2018</p>
+                        <ul>
+                            <li>Maintenance préventive et curative du parc informatique (postes bureautiques et imprimantes).</li>
+                        </ul>
+                    </div>
+                    <div class="job">
+                        <h4>Téléopérateur | <strong>Advancia</strong></h4>
+                        <p class="date">2015 - 2016</p>
+                        <ul>
+                            <li>Qualification de fichiers et prise de rendez-vous.</li>
+                        </ul>
                     </div>
                 </section>
 
-                <!-- Langues -->
-                <section>
-                    <h3 class="section-title">Langues</h3>
-                    <p class="text-gray-700">Français (Avancé)</p>
-                    <p class="text-gray-700">Anglais (Débutant)</p>
+                <section class="education">
+                    <h3>Formation</h3>
+                     <div class="course">
+                        <h4>Software Developer Bootcamp | <strong>GOMYCODE</strong></h4>
+                        <p class="date">2025</p>
+                    </div>
+                     <div class="course">
+                        <h4>BTS Maintenance Informatique | <strong>EFC, Tunis</strong></h4>
+                        <p class="date">2012</p>
+                    </div>
+                     <div class="course">
+                        <h4>Baccalauréat en Littérature | <strong>Carthage Hannibal</strong></h4>
+                        <p class="date">2009</p>
+                    </div>
                 </section>
-            </div>
+            </main>
         </div>
-
     </div>
+
+    <script>
+        // --- Gemini API Integration ---
+
+        const tailorCvBtn = document.getElementById('tailor-cv-btn');
+        const jobDescriptionInput = document.getElementById('job-description');
+        const loader = document.getElementById('loader');
+        const resultDiv = document.getElementById('tailored-summary-result');
+
+        tailorCvBtn.addEventListener('click', async () => {
+            const jobDescription = jobDescriptionInput.value;
+            if (!jobDescription.trim()) {
+                alert('Veuillez coller une description de poste.');
+                return;
+            }
+
+            // Show loader and hide previous result
+            loader.style.display = 'block';
+            resultDiv.style.display = 'none';
+            resultDiv.textContent = '';
+
+            try {
+                // Get the full CV content for context
+                const cvContainer = document.getElementById('cv-container');
+                const fullCvText = cvContainer.innerText;
+                const originalSummary = document.getElementById('original-summary').innerText;
+
+                // Construct the prompt
+                const prompt = `
+                    Vous êtes un coach de carrière expert et un rédacteur de CV professionnel.
+                    Voici le CV complet de Seif Allah Bel Hadj pour vous donner un contexte :
+                    --- DEBUT CV ---
+                    ${fullCvText}
+                    --- FIN CV ---
+
+                    Une entreprise a publié l'offre d'emploi suivante :
+                    --- DEBUT OFFRE ---
+                    ${jobDescription}
+                    --- FIN OFFRE ---
+
+                    Votre tâche est de réécrire le résumé original de Seif Allah (qui est : "${originalSummary}") pour qu'il corresponde parfaitement à cette offre d'emploi spécifique.
+                    Conservez une longueur similaire (environ 3-4 phrases). Mettez en évidence les compétences et les expériences de son CV qui sont les plus pertinentes pour le rôle décrit dans l'offre.
+                    Le ton doit être professionnel, confiant et percutant.
+                    Répondez UNIQUEMENT avec le nouveau texte du résumé, sans aucune phrase d'introduction ou de conclusion de votre part.
+                `;
+
+                // Call the Gemini API with exponential backoff
+                const generatedSummary = await fetchWithBackoff(prompt);
+
+                // Display the result
+                resultDiv.textContent = generatedSummary;
+                resultDiv.style.display = 'block';
+
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                resultDiv.textContent = "Désolé, une erreur s'est produite. Veuillez réessayer.";
+                resultDiv.style.display = 'block';
+            } finally {
+                // Hide loader
+                loader.style.display = 'none';
+            }
+        });
+
+        async function fetchWithBackoff(prompt, maxRetries = 3) {
+            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // API key will be injected by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            let delay = 1000; // Start with 1 second
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API response not OK: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error('Invalid response structure from API');
+                    }
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error; // Last retry failed, throw error
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Double the delay for the next retry
+                }
+            }
+        }
+
+    </script>
 </body>
 </html>
